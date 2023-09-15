@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DETI</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+    <header>
+        <h1>Minha Loja de Produtos</h1>
+    </header>
+    <section class="product-list">
+        <article class="product">
+            <img src="camisola.png" alt="Produto 1">
+            <h2>Camisola</h2>
+            <p>Camisola DETI ECT</p>
+            <p class="price">10,00 €</p>
+            <button class="buy-button" onclick="addToCart('Camisola DETI ECT', 10.00 , 1)">Adicionar ao carrinho</button>
+        </article>
+
+        <article class="product">
+            <img src="produto2.jpg" alt="Produto 2">
+            <h2>Produto 2</h2>
+            <p>Camisola </p>
+            <p class="price">18.99 €</p>
+            <button class="buy-button" onclick="addToCart('Produto 2', 15.00)">Adicionar ao carrinho</button>
+        </article>
+        <!-- Repita esta estrutura para outros produtos -->
+    </section>
+    <aside class="cart">
+        <h2>Carrinho de Compras</h2>
+        <ul class="cart-items">
+            <!-- Itens do carrinho serão adicionados dinamicamente aqui -->
+        </ul>
+        <p>Total: <span class="cart-total">0,00 €</span></p>
+    </aside>
+    <footer>
+        <p>&copy; 2023 DETI MERCHANDISE</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

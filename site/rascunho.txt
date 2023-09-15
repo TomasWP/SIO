@@ -1,0 +1,10 @@
+USER-PASSWORD
+tomas-123
+    if(user != "admin" && password == "admin"){
+        alert('Incorrect user!');
+    }else if(password != "admin"){
+        alert('Incorrect password!');
+    }else{
+        location.href = "index.html";
+        alert('LogIn Successful!');
+    }

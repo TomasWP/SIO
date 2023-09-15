@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DETI</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+        <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+        <!--<title>{% block title %}Home{% endblock %}</title>-->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />
+    </head>
+<body>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">DETI STORE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" id="login" href="/login">Login</a>
+                <a class="nav-item nav-link" id="signUp" href="/signup">SignUp</a>
+                <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+                <a class="nav-item nav-link" id="carrinho" href="/carrinho">Carrinho</a>
+            </div>
+        </div>
+    </nav>
+    <!--<header>
+        <h1>DETI STORE</h1>
+        <button class="signUp-button" onclick="">SigIn</button>
+        <button class="logIn-button" onclick="">LogIn</button>
+    </header>-->
+    <section class="product-list">
+        <article class="product">
+            <img src="{{url_for('static', filename='camisola.png')}}" alt="Produto 1">
+            <h2>Camisola</h2>
+            <p>Camisola DETI ECT</p>
+            <p class="price">10,00 €</p>
+            <button class="buy-button" onclick="addToCart('Camisola DETI ECT', 10.00 , 1)">Adicionar ao carrinho</button>
+        </article>
+
+        <article class="product">
+            <img src="{{url_for('static', filename='casaco.png')}}" alt="Produto 2">
+            <h2>Casaco</h2>
+            <p>Casaco DETI ECT </p>
+            <p class="price">16.50 €</p>
+            <button class="buy-button" onclick="addToCart('Produto 2', 15.00)">Adicionar ao carrinho</button>
+        </article>
+        <!--Repita esta estrutura para outros produtos -->
+    </section>
+    <!--<aside class="cart">
+        <h2>Carrinho de Compras</h2>
+        <ul class="cart-items">
+             Itens do carrinho serão adicionados dinamicamente aqui 
+        </ul>
+        <p>Total: <span class="cart-total">0,00 €</span></p>
+    </aside> -->
+    <footer>
+        <p>&copy; 2023 DETI STORE</p>
+    </footer>
+</body>
+</html>
