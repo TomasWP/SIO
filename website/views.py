@@ -11,11 +11,11 @@ def index():
 def login():
     user = request.form.get('user')
     password = request.form.get('password')
-    print(user, password)
-    if user == 'tomas' and password == '12345':
+    if functions.validate_login(user, password):
         flash("Logged in successfully!", category='success')
         return render_template("index.html")
-    flash("Incorrect username or password", category='error')
+    else:
+        flash("Incorrect username or password", category='error')
     return render_template("login.html")
 
 @views.route("/logout")
@@ -27,19 +27,20 @@ def sign_up():
     username = request.form.get('user')
     password = request.form.get('password')
     confirmpassword = request.form.get('confirmpassword')
-    print(username, password, confirmpassword)
 
     # Check if the requested method is POST
     if request.method == "POST":
-        if len(str(password)) < 5:
+        # Check if the username already exists
+        if functions.search_user_by_username(username):
+            flash("Username already exists", category='error')
+        elif len(str(password)) < 5:
             flash("Password must be at least 5 characters", category='error')
         elif str(password) != str(confirmpassword):
             flash("Passwords don't match", category='error')
         else:
             # Create the user in the database
-            functions.create_user(username, password)
-            print("User created with id: " + id)
+            id = functions.create_user(username, password)
             flash("Account created!", category='success')
             # Return the login page
-            return redirect(url_for("views.login", username=username))
+            return render_template("login.html")
     return render_template("signup.html")
