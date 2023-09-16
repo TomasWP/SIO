@@ -4,7 +4,6 @@
         <title>DETI</title>
         <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
         <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
-        <!--<title>{% block title %}Home{% endblock %}</title>-->
         <link
         rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -47,11 +46,6 @@
             </div>
         </div>
     </nav>
-    <!--<header>
-        <h1>DETI STORE</h1>
-        <button class="signUp-button" onclick="">SigIn</button>
-        <button class="logIn-button" onclick="">LogIn</button>
-    </header>-->
     <section class="product-list">
         <article class="product">
             <img src="{{url_for('static', filename='camisola.png')}}" alt="Produto 1">
@@ -70,13 +64,6 @@
         </article>
         <!--Repita esta estrutura para outros produtos -->
     </section>
-    <!--<aside class="cart">
-        <h2>Carrinho de Compras</h2>
-        <ul class="cart-items">
-             Itens do carrinho serão adicionados dinamicamente aqui 
-        </ul>
-        <p>Total: <span class="cart-total">0,00 €</span></p>
-    </aside> -->
     <footer>
         <p>&copy; 2023 DETI STORE</p>
     </footer>
